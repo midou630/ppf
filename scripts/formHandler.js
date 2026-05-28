@@ -1,5 +1,11 @@
 function getFormData() {
 
+    const today =
+        new Date();
+
+    const formattedDate =
+        today.toLocaleDateString();
+
     return {
 
         doctorName:
@@ -11,16 +17,13 @@ function getFormData() {
         patientAge:
             document.getElementById("patientAge").value,
 
-        diagnosis:
-            document.getElementById("diagnosis").value,
+        patientGender:
+            document.getElementById("patientGender").value,
 
         medications:
             document.getElementById("medications").value,
 
-        instructions:
-            document.getElementById("instructions").value,
-
         date:
-            document.getElementById("date").value
+            formattedDate
     };
 }

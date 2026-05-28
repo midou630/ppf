@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/form.css" />
     <link rel="stylesheet" href="styles/print.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,22 +28,65 @@
 
             <form id="prescriptionForm">
 
-                <input type="text" id="doctorName" placeholder="اسم الطبيب" required />
+                <input
+                    type="text"
+                    id="doctorName"
+                    placeholder="اسم الطبيب"
+                    required />
 
-                <input type="text" id="patientName" placeholder="اسم المريض" required />
+                <input
+                    type="text"
+                    id="patientName"
+                    placeholder="اسم و لقب المريض"
+                    required />
 
-                <input type="number" id="patientAge" placeholder="العمر" required />
+                <input
+                    type="number"
+                    id="patientAge"
+                    placeholder="العمر"
+                    required />
 
-                <textarea id="diagnosis" placeholder="التشخيص"></textarea>
+                <select
+                    id="patientGender"
+                    required>
 
-                <textarea id="medications" placeholder="الأدوية"></textarea>
+                    <option value="">
+                        اختر الجنس
+                    </option>
 
-                <textarea id="instructions" placeholder="التعليمات"></textarea>
+                    <option value="ذكر">
+                        ذكر
+                    </option>
 
-                <input type="date" id="date" required />
+                    <option value="أنثى">
+                        أنثى
+                    </option>
 
-                <button type="button" id="generateBtn">
+                </select>
+
+                <!-- ✅ حقل الأدوية الجديد (قائمة من JSON) -->
+
+                <div class="medications-box">
+
+                    <input
+                        type="text"
+                        id="medications"
+                        placeholder="اضغط لاختيار دواء..."
+                        readonly />
+
+                    <div
+                        id="medicationsList"
+                        class="medications-list">
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="generateBtn">
+
                     إنشاء PDF
+
                 </button>
 
             </form>
@@ -49,23 +98,40 @@
 
             <div id="prescriptionTemplate">
 
-                <img src="assets/templates/prescription-template.png"
+                <img
+                    src="assets/templates/prescription-template.png"
                     class="template-bg"
                     alt="Prescription Template" />
 
-                <div class="overlay doctor-name" id="previewDoctorName"></div>
+                <div
+                    class="overlay doctor-name"
+                    id="previewDoctorName">
+                </div>
 
-                <div class="overlay patient-name" id="previewPatientName"></div>
+                <div
+                    class="overlay patient-name"
+                    id="previewPatientName">
+                </div>
 
-                <div class="overlay patient-age" id="previewPatientAge"></div>
+                <div
+                    class="overlay patient-age"
+                    id="previewPatientAge">
+                </div>
 
-                <div class="overlay diagnosis" id="previewDiagnosis"></div>
+                <div
+                    class="overlay patient-gender"
+                    id="previewPatientGender">
+                </div>
 
-                <div class="overlay medications" id="previewMedications"></div>
+                <div
+                    class="overlay medications"
+                    id="previewMedications">
+                </div>
 
-                <div class="overlay instructions" id="previewInstructions"></div>
-
-                <div class="overlay date" id="previewDate"></div>
+                <div
+                    class="overlay date"
+                    id="previewDate">
+                </div>
 
             </div>
 
@@ -73,9 +139,12 @@
 
     </div>
 
+    <!-- المكتبات -->
     <script src="libraries/html2canvas.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
+    <!-- سكربتات المشروع -->
     <script src="scripts/formHandler.js"></script>
     <script src="scripts/templateRenderer.js"></script>
     <script src="scripts/pdfGenerator.js"></script>

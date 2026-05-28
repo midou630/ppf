@@ -23,38 +23,50 @@
 
 .doctor-name {
     top: 120px;
-    right: 120px;
+    left: 120px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .patient-name {
-    top: 220px;
-    right: 120px;
+    top: 255px;
+    left: 197px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .patient-age {
-    top: 220px;
-    right: 500px;
+    top: 255px;
+    left: 664px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .diagnosis {
     top: 320px;
     right: 120px;
     width: 500px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .medications {
     top: 450px;
     right: 120px;
     width: 500px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .instructions {
     top: 650px;
     right: 120px;
     width: 500px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .date {
     top: 1000px;
     right: 120px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.overlay {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }
